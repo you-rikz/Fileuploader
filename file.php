@@ -1,6 +1,6 @@
 <?php
 
-class file
+class File
 {
 	protected $id;
 	protected $complete_name;
@@ -8,10 +8,10 @@ class file
 	protected $password;
 	protected $picture_path;
 
-	const TYPE_IMAGE = 'images';
-	const TYPE_IMAGE = 'images/';
+	const TYPE_IMAGE = 'image';
 
-	const DIRECTORY_IMAGES = 'uploads/';
+
+	const DIRECTORY_IMAGES = 'upload/';
 
 	public function __construct(
 		$complete_name,
@@ -30,7 +30,7 @@ class file
 	{
 		return $this->complete_name;
 	}
-	public function getPicture()
+	public function getPic()
 	{
 		return $this->picture_path;
 	}
@@ -50,7 +50,7 @@ class file
 		global $pdo;
 		try {
 
-			$sql = "INSERT INTO files SET complete_name=:complete_name, email=:email, password=:password, picture_path=:picture_path";
+			$sql = "INSERT INTO registrations SET complete_name=:complete_name, email=:email, password=:password, picture_path=:picture_path";
 			$statement = $pdo->prepare($sql);
 
 			return $statement->execute([
@@ -92,3 +92,4 @@ class file
 
 
     }
+}

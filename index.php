@@ -13,6 +13,13 @@ $error = $_GET['error'] ?? null;
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <title>File Upload Handler in PHP</title>
+<style> 
+.btn-primary {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: #27baba;
+
+}
+</style>
 </head>
 <body>
 <?php if (!is_null($success)): ?>
@@ -37,8 +44,8 @@ $error = $_GET['error'] ?? null;
     </div>
 </div>
   <div class="container">
-
-  <table class="table table-sm">
+  <div class="container-xl">
+  <table class="table table-striped">
   <thead>
       <th scope="col">ID</th>
       <th scope="col">Complete Name</th>
@@ -48,6 +55,7 @@ $error = $_GET['error'] ?? null;
   </thead>
   <tbody>
         <?php
+            $retrieve = new Retrieve;
             $retrieveData = $retrieve->retrieveData();
             foreach($retrieveData as $data){
         ?>

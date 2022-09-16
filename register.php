@@ -1,7 +1,3 @@
-<?php
-$success = $_GET['success'] ?? null;
-$error = $_GET['error'] ?? null;
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +17,10 @@ $error = $_GET['error'] ?? null;
         }
         .registerform {
         }
+
+        .btn-primary {
+            background-color: #27baba;
+        }
     </style>
    <script>
         var check = function() {
@@ -34,15 +34,15 @@ $error = $_GET['error'] ?? null;
         }
         }
         function check_pass() {
-        if (document.getElementById('password').value ==
-                document.getElementById('confirmPassword').value) {
+        if (document.getElementById('pass').value ==
+                document.getElementById('cpass').value) {
             document.getElementById('submit').disabled = false;
         } else {
             document.getElementById('submit').disabled = true;
         }
         }
     </script>
-    <title>Document</title>
+    <title>File Uploader</title>
     
 </head>
 <body>
@@ -51,11 +51,11 @@ $error = $_GET['error'] ?? null;
                 <h1> Registration Form</h1>
             </header>
             <div class="table">
-                <form method="POST" enctype="multipart/form-data" action="form-handler.php">
+                <form method="POST" enctype="multipart/form-data" action="form_handler.php">
                 <div class="form-group">
                 <div class="col-md-4 mb-3">
-            <label for="cname">Complete Name</label>
-            <input type="text" class="form-control" id="cname" name="cname"  placeholder="Enter Complete Name">
+            <label for="complete_name">Complete Name</label>
+            <input type="text" class="form-control" id="complete_name" name="complete_name"  placeholder="Enter Complete Name">
         </div>
         <div class="form-group">
         <div class="col-md-4 mb-3">
@@ -65,18 +65,19 @@ $error = $_GET['error'] ?? null;
         </div>
         <div class="form-group">
         <div class="col-md-4 mb-3">
-            <label for="pass">Password</label>
-            <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
         </div>
         <div class="form-group">
         <div class="col-md-4 mb-3">
             <label for="cpass">Confirm Password</label>
             <input type="password" class="form-control" id="cpass" name="cpass" placeholder="Confirm your Password">
+            <span id='message'></span>
         </div>
         <div class="form-group">
         <div class="col-md-4 mb-3">
-            <label for="picture">Picture</label>
-            <input type="file" class="form-control" id="picture" name="picture">
+            <label for="picture_path">Picture</label>
+            <input type="file" class="form-control" id="picture_path" name="picture_path">
             </div>
         <div class="form-group row">
             <input class="btn btn-primary btn-lg" type="submit" value="Submit" style="margin-left: 300px;">
@@ -86,45 +87,6 @@ $error = $_GET['error'] ?? null;
 
 
 
-            <!--<div class="form-group row">
-                <label for="cname" class= "col-sm-2 col-form-label">Complete Name</label>
-                <div class="col-sm-5">
-                    <input type="text" class="form-control" id="cname" name="cname">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="email" class= "col-sm-2 col-form-label">Email Address</label>
-                <div class="col-sm-5">
-                    <input type="text" class="form-control" id="email" name="email">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="pass" class= "col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-5">
-                    <input type="password" class="form-control" id="pass" name="pass">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="cpass" class= "col-sm-2 col-form-label">Confirm Password</label>
-                <div class="col-sm-5">
-                    <input type="password" class="form-control" id="cpass" name="cpass">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="picture" class= "col-sm-2 col-form-label">Picture</label>
-                <div class="col-sm-5">
-                    <input type="file" class="form-control" id="picture" name="picture">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                    <input class="btn btn-primary btn-lg" type="submit" value="Submit" style="margin-left: 300px;">
-                </div>
-            </div>-->
         </form>
     </div>
     </div>
